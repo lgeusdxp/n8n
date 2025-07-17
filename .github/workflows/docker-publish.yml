@@ -24,7 +24,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          # Point the build context to the correct sub-directory
+          context: ./packages/n8n
           push: true
           # This tag matches the one in your docker-compose.yml file.
           tags: lgeusdxp/n8n-custom:latest
